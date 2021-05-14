@@ -1,0 +1,55 @@
+<!--
+ Engenharia de Software - BSI-MC - FACOM - UFU
+ Profa. Fabíola Pereira
+ 
+ Um exemplo de Single Page Application, 
+ adaptado do livro Engenharia de Software Moderna [1].
+
+ Ilustra uma aplicação Web 
+ com características do padrão MVC tradicional:
+ interface (visão + controle) e modelo
+
+[1] Marco Tulio Valente. Engenharia de Software Moderna: 
+Princípios e Práticas para Desenvolvimento de Software com 
+Produtividade, 2020. 
+https://replit.com/@engsoftmoderna/SinglePageApplication
+ 
+-->
+
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+
+<h3>Uma SPA</h3>
+
+<div id="ui">
+  Nota de ESOF: {{ nota }}
+  <p>
+  	<button v-on:click="incNota">Incrementa</button>
+  	<button v-on:click="decNota">Decrementa</button>
+  </p>
+  
+</div>
+
+
+<script>
+var model = new Vue({
+  el: '#ui',
+  data: {
+    nota: 10
+  },
+  methods: {
+    incNota: function () {
+      this.nota++;
+    },
+    decNota: function () {
+      this.nota--;
+    }
+  }
+})
+</script>
+
+</body>
+</html>
+
